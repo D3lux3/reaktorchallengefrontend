@@ -26,7 +26,7 @@ const App: React.FC = () => {
             </Toolbar>
           </div>
         </AppBar>
-        <Route path="/">
+        <Route exact path="/">
           <Redirect to="/gloves" />
         </Route>
         <Route path="/gloves">
