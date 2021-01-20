@@ -13,7 +13,7 @@ const ProductContainer: React.FC<{ productName: string }> = ({ productName }) =>
         const fetchProductData = async () => {
             try {
                 setLoading(true);
-                const { data: productData } = await axios.get<ProductType[]>(`http://localhost:3002/products/${productName}?page=${pageNum}`);
+                const { data: productData } = await axios.get<ProductType[]>(`${process.env.REACT_APP_API_URL}/products/${productName}?page=${pageNum}`);
                 setProducts(products.concat(productData));
                 productData.length > 0 ? setHasMore(true) : setHasMore(false);
             } catch (e) {
