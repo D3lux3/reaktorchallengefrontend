@@ -14,6 +14,8 @@ The frontend uses pagination to be more faster for the user.
 
 The frontend has been made using Typescript, React and the UI is made using Material-UI.
 
+Backend: https://github.com/D3lux3/reaktorchallengebackend
+
 ## Demo
 
 Here's link to a working demo of the whole project: https://reaktorchallengefrontend.herokuapp.com/
