@@ -20,7 +20,7 @@ const ProductContainer: React.FC<{ productName: string }> = ({ productName }) =>
                 setProducts(products.concat(productData));
                 productData.length > 0 ? setHasMore(true) : setHasMore(false);
             } catch (e) {
-                e?.response.status === 503 ? setBackEndReady(false) : setBackEndReady(true);
+                e?.response?.status === 503 ? setBackEndReady(false) : setBackEndReady(true);
             }
             setLoading(false);
         };
@@ -33,7 +33,7 @@ const ProductContainer: React.FC<{ productName: string }> = ({ productName }) =>
             <>
                 <Typography align="center" variant="h6">Server is still loading 💤, please try again in a few seconds :-) 🧪</Typography>
             </>
-        )
+        );
     }
 
     return (
