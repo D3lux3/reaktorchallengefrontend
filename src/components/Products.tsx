@@ -26,7 +26,6 @@ const stockColor = (stock: string): string => {
     }
 }
 
-
 const Products: React.FC<ProductsPropsType> = ({ products, pageNum, setPageNum, loading, hasMore }) => {
     const observer = useRef(null);
     const lastElement = useCallback(node => {
