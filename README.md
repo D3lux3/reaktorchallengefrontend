@@ -47,12 +47,8 @@ Create a .env file in to the root of the folder. Then enter following line in to
 REACT_APP_API_URL=http://EXAMPLE
 ```
 ### Step 3
-Installing dependencies and building frontend. And launching the frontend.
+Installing dependencies and launching the frontend.
 ```
 npm install
-npm run build
-
-cd build
-
 npm start
 ```
