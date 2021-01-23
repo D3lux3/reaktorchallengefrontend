@@ -14,6 +14,8 @@ The frontend uses pagination to be more faster for the user.
 
 The frontend has been made using Typescript, React and the UI is made using Material-UI.
 
+Unfortunately the first load of the website is pretty slow, because it fetches the data from the bad-api.
+
 Backend: https://github.com/D3lux3/reaktorchallengebackend
 
 ## Demo
