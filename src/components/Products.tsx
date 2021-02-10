@@ -22,7 +22,7 @@ const stockColor = (stock: string): string => {
         case "LESSTHAN10":
             return "#ffa801";
         default:
-            return "#3c40c6";
+            return "#d2dae2";
     }
 }
 
@@ -72,7 +72,7 @@ const Products: React.FC<ProductsPropsType> = ({ products, pageNum, setPageNum, 
                                     <div>{o.price} <span role="img" aria-label="money">💰</span></div>
                                 </TableCell>
                                 <TableCell>
-                                    <Chip style={{ backgroundColor: stockColor(o.stock) }} label={o.stock} />
+                                    <Chip style={{ backgroundColor: stockColor(o.stock)}} label={o.stock === undefined ? "Loading..." : o.stock}/>
                                 </TableCell>
                             </TableRow>
                         ))}

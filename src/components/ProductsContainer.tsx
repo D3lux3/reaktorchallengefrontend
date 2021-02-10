@@ -16,11 +16,11 @@ const ProductContainer: React.FC<{ productName: string }> = ({ productName }) =>
             try {
                 setLoading(true);
                 const { data: productData } = await axios.get<ProductType[] | undefined>(`${process.env.REACT_APP_API_URL}/products/${productName}?page=${pageNum}`);
-                productData ? setBackEndReady(true) : setBackEndReady(false);
                 setProducts(products.concat(productData));
-                productData.length > 0 ? setHasMore(true) : setHasMore(false);
+                setHasMore(productData.length > 0);
+                setBackEndReady(!(productData.length == 0));
             } catch (e) {
-                e?.response?.status === 503 ? setBackEndReady(false) : setBackEndReady(true);
+                setBackEndReady(e?.response?.status === 503);
             }
             setLoading(false);
         };
@@ -31,7 +31,7 @@ const ProductContainer: React.FC<{ productName: string }> = ({ productName }) =>
     if (!backEndReady) {
         return (
             <>
-                <Typography align="center" variant="h6">Server is still loading 💤, please try again in a few seconds :-) 🧪</Typography>
+                <Typography align="center" variant="h6">Loading...💡</Typography>
             </>
         );
     }

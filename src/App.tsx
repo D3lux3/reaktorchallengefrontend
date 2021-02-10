@@ -26,18 +26,19 @@ const App: React.FC = () => {
             </Toolbar>
           </div>
         </AppBar>
-        <Route exact path="/">
-          <Redirect to="/gloves" />
-        </Route>
-        <Route path="/gloves">
-          <ProductsContainer productName={"gloves"} />
-        </Route>
-        <Route path="/facemasks">
-          <ProductsContainer productName={"facemasks"} />
-        </Route>
-        <Route path="/beanies">
-          <ProductsContainer productName={"beanies"} />
-        </Route>
+        
+          <Route exact path="/">
+            <Redirect to="/gloves" />
+          </Route>
+          <Route exact path="/gloves">
+            <ProductsContainer productName={"gloves"} />
+          </Route>
+          <Route exact path="/facemasks">
+            <ProductsContainer productName={"facemasks"} />
+          </Route>
+          <Route exact path="/beanies">
+            <ProductsContainer productName={"beanies"} />
+          </Route>
       </Router>
     </Container>
   )
